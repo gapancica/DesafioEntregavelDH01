@@ -8,4 +8,13 @@ public class DigitalHouseManager {
     List<Curso> listaCursos = new ArrayList<>();
     List<Matricula> listaMatriculas = new ArrayList<>();
 
+    public Boolean adicionarUmAluno(Aluno umAluno) {
+        return true;
+    }
+
+    public void excluirUmAluno(Aluno umAluno) {
+
+    }
+
+    
 }
