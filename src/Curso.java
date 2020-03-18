@@ -83,11 +83,4 @@ public class Curso {
         this.professorAdjunto = professorAdjunto;
     }
 
-    public List<Aluno> getAlunosMatriculados() {
-        return alunosMatriculados;
-    }
-
-    public void setAlunosMatriculados(List<Aluno> alunosMatriculados) {
-        this.alunosMatriculados = alunosMatriculados;
-    }
 }
