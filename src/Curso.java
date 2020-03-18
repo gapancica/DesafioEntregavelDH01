@@ -1,7 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Curso {
 
-    private String nome;
-    private Integer codigoDeCurso;
+    private String
+            nome;
+
+    private Integer
+            codigoDeCurso,
+            quantMaxAlunos;
+
+    private ProfessorTitular
+            professorTitular;
+
+    private ProfessorAdjunto
+            professorAdjunto;
+
+    private List<Aluno> alunosMatriculados = new ArrayList<>();
+
 
     public Curso() {
 
@@ -41,5 +57,37 @@ public class Curso {
 
     public void setCodigoDeCurso(Integer codigoDeCurso) {
         this.codigoDeCurso = codigoDeCurso;
+    }
+
+    public Integer getQuantMaxAlunos() {
+        return quantMaxAlunos;
+    }
+
+    public void setQuantMaxAlunos(Integer quantMaxAlunos) {
+        this.quantMaxAlunos = quantMaxAlunos;
+    }
+
+    public ProfessorTitular getProfessorTitular() {
+        return professorTitular;
+    }
+
+    public void setProfessorTitular(ProfessorTitular professorTitular) {
+        this.professorTitular = professorTitular;
+    }
+
+    public ProfessorAdjunto getProfessorAdjunto() {
+        return professorAdjunto;
+    }
+
+    public void setProfessorAdjunto(ProfessorAdjunto professorAdjunto) {
+        this.professorAdjunto = professorAdjunto;
+    }
+
+    public List<Aluno> getAlunosMatriculados() {
+        return alunosMatriculados;
+    }
+
+    public void setAlunosMatriculados(List<Aluno> alunosMatriculados) {
+        this.alunosMatriculados = alunosMatriculados;
     }
 }
