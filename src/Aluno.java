@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Aluno {
 
     private String
@@ -15,6 +17,21 @@ public class Aluno {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.codigoDeAluno = codigoDeAluno;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Aluno)) return false;
+
+        Aluno aluno = (Aluno) o;
+
+        return getCodigoDeAluno().equals(aluno.getCodigoDeAluno());
+    }
+
+    @Override
+    public int hashCode() {
+        return getCodigoDeAluno().hashCode();
     }
 
     public String getNome() {
