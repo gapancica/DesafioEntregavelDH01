@@ -58,5 +58,13 @@ public class Aluno {
         this.codigoDeAluno = codigoDeAluno;
     }
 
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", codigoDeAluno=" + codigoDeAluno +
+                '}';
+    }
 
 }

@@ -23,9 +23,47 @@ public class Curso {
 
     }
 
-    public Curso(String nome, Integer codigoDeCurso) {
+    public Curso(Integer codigoDeCurso){
+
+    }
+
+    public Curso(String nome,
+                 Integer codigoDeCurso,
+                 Integer quantMaxAlunos,
+                 ProfessorTitular professorTitular,
+                 ProfessorAdjunto professorAdjunto,
+                 List<Aluno> alunosMatriculados) {
         this.nome = nome;
         this.codigoDeCurso = codigoDeCurso;
+        this.quantMaxAlunos = quantMaxAlunos;
+        this.professorTitular = professorTitular;
+        this.professorAdjunto = professorAdjunto;
+        this.alunosMatriculados = alunosMatriculados;
+    }
+
+    public Curso(String nome,
+                 Integer codigoDeCurso,
+                 Integer quantMaxAlunos) {
+        this.nome = nome;
+        this.codigoDeCurso = codigoDeCurso;
+        this.quantMaxAlunos = quantMaxAlunos;
+    }
+
+    public Boolean adicionarUmAluno(Aluno umAluno) {
+        if (this.quantMaxAlunos > 0){
+            this.alunosMatriculados.add(umAluno);
+            this.quantMaxAlunos-=1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void excluirUmAluno(Aluno umAluno) {
+        if (this.alunosMatriculados.equals(umAluno)) {
+            this.alunosMatriculados.remove(umAluno);
+            this.quantMaxAlunos+=1;
+        }
     }
 
     @Override
@@ -83,4 +121,23 @@ public class Curso {
         this.professorAdjunto = professorAdjunto;
     }
 
+    public List<Aluno> getAlunosMatriculados() {
+        return alunosMatriculados;
+    }
+
+    public void setAlunosMatriculados(List<Aluno> alunosMatriculados) {
+        this.alunosMatriculados = alunosMatriculados;
+    }
+
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "nome='" + nome + '\'' +
+                ", codigoDeCurso=" + codigoDeCurso +
+                ", quantMaxAlunos=" + quantMaxAlunos +
+                ", professorTitular=" + professorTitular +
+                ", professorAdjunto=" + professorAdjunto +
+                ", alunosMatriculados=" + alunosMatriculados +
+                '}';
+    }
 }
