@@ -1,5 +1,6 @@
 public class Principal {
     public static void main(String[] args) {
+
         DigitalHouseManager escolaDH = new DigitalHouseManager();
 
         escolaDH.registrarProfessorTitular("Peterson", "Nascimento", 9001, "Java");

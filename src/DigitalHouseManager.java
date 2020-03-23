@@ -73,37 +73,35 @@ public class DigitalHouseManager {
         if (umCurso.adicionarUmAluno(umAluno)) {
             Matricula novaMatricula = new Matricula(umAluno, umCurso);
             listaMatriculas.add(novaMatricula);
-            System.out.printf("O aluno, " + umAluno.getNome() + " foi matriculado no curso " + umCurso.getNome() + ".");
+            System.out.printf("O aluno " + umAluno.getNome() + " foi matriculado no curso " + umCurso.getNome() + ".\n");
         } else {
             System.out.printf("Não foi possível realizar a matrícula, pois não há vaga disponível.");
         }
     }
 
     public void alocarProfessores(Integer codigoCurso, Integer codigoProfessorTitular, Integer codigoProfessorAdjunto) {
+
         ProfessorTitular novoProfessorTitular = null;
         ProfessorAdjunto novoProfessorAdjunto = null;
         Curso umCurso = null;
 
-        for (int curso = 0; curso < listaCursos.size(); curso++) {
-            if (listaCursos.get(curso).getCodigoDeCurso().equals(codigoCurso)) {
-                umCurso = listaCursos.get(curso);
+        for (int i = 0; i < listaCursos.size(); i++) {
+            if (listaCursos.get(i).getCodigoDeCurso().equals(codigoCurso)) {
+                umCurso = listaCursos.get(i);
             }
-
-            for (int professorT = 0; professorT < listaProfessores.size(); professorT++) {
-                if (listaProfessores.get(professorT).getCodigoDeProfessor().equals(codigoProfessorTitular)) {
-                    novoProfessorTitular = (ProfessorTitular) listaProfessores.get(professorT);
+        }
+            for (int i1 = 0; i1 < listaProfessores.size(); i1++) {
+                if (listaProfessores.get(i1).getCodigoDeProfessor().equals(codigoProfessorTitular)) {
+                    novoProfessorTitular = (ProfessorTitular) listaProfessores.get(i1);
                 }
-            }
-
-            for (int professorA = 0; professorA < listaProfessores.size(); professorA++) {
-                if (listaProfessores.get(professorA).getCodigoDeProfessor().equals(codigoProfessorAdjunto)) {
-                    novoProfessorAdjunto = (ProfessorAdjunto) listaProfessores.get(professorA);
+                if (listaProfessores.get(i1).getCodigoDeProfessor().equals(codigoProfessorAdjunto)) {
+                    novoProfessorAdjunto = (ProfessorAdjunto) listaProfessores.get(i1);
                 }
             }
 
             umCurso.setProfessorTitular(novoProfessorTitular);
             umCurso.setProfessorAdjunto(novoProfessorAdjunto);
-        }
+
     }
 
     public void consultarCurso(Integer codigoAluno) {
