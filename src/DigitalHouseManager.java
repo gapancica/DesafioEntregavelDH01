@@ -60,14 +60,14 @@ public class DigitalHouseManager {
                                 Integer codigoCurso) {
         Curso umCurso = null;
         Aluno umAluno = null;
-        for (int curso = 0; curso < listaCursos.size(); curso++) {
-            if (listaCursos.get(curso).getCodigoDeCurso().equals(codigoCurso)) {
-                umCurso = listaCursos.get(curso);
+        for (Curso listaCurso : listaCursos) {
+            if (listaCurso.getCodigoDeCurso().equals(codigoCurso)) {
+                umCurso = listaCurso;
             }
         }
-        for (int aluno = 0; aluno < listaAlunos.size(); aluno++) {
-            if (listaAlunos.get(aluno).getCodigoDeAluno().equals(codigoAluno)) {
-                umAluno = listaAlunos.get(aluno);
+        for (Aluno listaAluno : listaAlunos) {
+            if (listaAluno.getCodigoDeAluno().equals(codigoAluno)) {
+                umAluno = listaAluno;
             }
         }
         if (umCurso.adicionarUmAluno(umAluno)) {
@@ -75,7 +75,7 @@ public class DigitalHouseManager {
             listaMatriculas.add(novaMatricula);
             System.out.printf("O aluno " + umAluno.getNome() + " foi matriculado no curso " + umCurso.getNome() + ".\n");
         } else {
-            System.out.printf("Não foi possível realizar a matrícula, pois não há vaga disponível.");
+            System.out.printf("Não foi possível realizar a matrícula, pois não há vaga disponível.\n");
         }
     }
 
@@ -85,29 +85,27 @@ public class DigitalHouseManager {
         ProfessorAdjunto novoProfessorAdjunto = null;
         Curso umCurso = null;
 
-        for (int i = 0; i < listaCursos.size(); i++) {
-            if (listaCursos.get(i).getCodigoDeCurso().equals(codigoCurso)) {
-                umCurso = listaCursos.get(i);
+        for (Curso listaCurso : listaCursos) {
+            if (listaCurso.getCodigoDeCurso().equals(codigoCurso)) {
+                umCurso = listaCurso;
             }
         }
-            for (int i1 = 0; i1 < listaProfessores.size(); i1++) {
-                if (listaProfessores.get(i1).getCodigoDeProfessor().equals(codigoProfessorTitular)) {
-                    novoProfessorTitular = (ProfessorTitular) listaProfessores.get(i1);
-                }
-                if (listaProfessores.get(i1).getCodigoDeProfessor().equals(codigoProfessorAdjunto)) {
-                    novoProfessorAdjunto = (ProfessorAdjunto) listaProfessores.get(i1);
-                }
+        for (Professor listaProfessores : listaProfessores) {
+            if (listaProfessores.getCodigoDeProfessor().equals(codigoProfessorTitular)) {
+                novoProfessorTitular = (ProfessorTitular) listaProfessores;
+                umCurso.setProfessorTitular(novoProfessorTitular);
             }
-
-            umCurso.setProfessorTitular(novoProfessorTitular);
-            umCurso.setProfessorAdjunto(novoProfessorAdjunto);
-
+            if (listaProfessores.getCodigoDeProfessor().equals(codigoProfessorAdjunto)) {
+                novoProfessorAdjunto = (ProfessorAdjunto) listaProfessores;
+                umCurso.setProfessorAdjunto(novoProfessorAdjunto);
+            }
+        }
     }
 
     public void consultarCurso(Integer codigoAluno) {
         for (int i = 0; i < listaMatriculas.size(); i++) {
             if (listaMatriculas.get(i).getAluno().getCodigoDeAluno().equals(codigoAluno))
-                System.out.printf(listaMatriculas.get(i).getCurso().toString());
+                System.out.printf(listaMatriculas.get(i).getCurso().toString()+"\n");
         }
     }
 }

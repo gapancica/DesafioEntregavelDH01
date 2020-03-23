@@ -10,7 +10,7 @@ public class Principal {
         escolaDH.registrarProfessorAdjunto("Roger", "Klotz", 8002, 56);
 
         escolaDH.registrarCurso("Full Stack", 20001, 3);
-        escolaDH.registrarCurso("Adroid", 20002, 2);
+        escolaDH.registrarCurso("Android", 20002, 2);
 
         escolaDH.alocarProfessores(20001, 9001, 8001);
         escolaDH.alocarProfessores(20002, 9002, 8002);
@@ -26,5 +26,7 @@ public class Principal {
         escolaDH.matricularAluno(10003, 20002);
         escolaDH.matricularAluno(10004, 20002);
         escolaDH.matricularAluno(10005, 20002);
+
+        escolaDH.consultarCurso(10003);
     }
 }
