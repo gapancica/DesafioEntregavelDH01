@@ -27,6 +27,11 @@ public class Principal {
         escolaDH.matricularAluno(10004, 20002);
         escolaDH.matricularAluno(10005, 20002);
 
+        System.out.printf(escolaDH.getListaAlunos().toString() +"\n"+
+                            escolaDH.getListaCursos().toString() +"\n"+
+                            escolaDH.getListaMatriculas().toString()+"\n"+
+                            escolaDH.getListaProfessores().toString());
+
         escolaDH.consultarCurso(10003);
     }
 }

@@ -81,8 +81,8 @@ public class DigitalHouseManager {
 
     public void alocarProfessores(Integer codigoCurso, Integer codigoProfessorTitular, Integer codigoProfessorAdjunto) {
 
-        ProfessorTitular novoProfessorTitular = null;
-        ProfessorAdjunto novoProfessorAdjunto = null;
+        ProfessorTitular novoProfessorTitular;
+        ProfessorAdjunto novoProfessorAdjunto;
         Curso umCurso = null;
 
         for (Curso listaCurso : listaCursos) {
@@ -107,5 +107,37 @@ public class DigitalHouseManager {
             if (listaMatriculas.get(i).getAluno().getCodigoDeAluno().equals(codigoAluno))
                 System.out.printf(listaMatriculas.get(i).getCurso().toString()+"\n");
         }
+    }
+
+    public List<Aluno> getListaAlunos() {
+        return listaAlunos;
+    }
+
+    public void setListaAlunos(List<Aluno> listaAlunos) {
+        this.listaAlunos = listaAlunos;
+    }
+
+    public List<Professor> getListaProfessores() {
+        return listaProfessores;
+    }
+
+    public void setListaProfessores(List<Professor> listaProfessores) {
+        this.listaProfessores = listaProfessores;
+    }
+
+    public List<Curso> getListaCursos() {
+        return listaCursos;
+    }
+
+    public void setListaCursos(List<Curso> listaCursos) {
+        this.listaCursos = listaCursos;
+    }
+
+    public List<Matricula> getListaMatriculas() {
+        return listaMatriculas;
+    }
+
+    public void setListaMatriculas(List<Matricula> listaMatriculas) {
+        this.listaMatriculas = listaMatriculas;
     }
 }
