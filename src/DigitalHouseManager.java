@@ -4,10 +4,10 @@ import java.util.List;
 
 public class DigitalHouseManager {
 
-    List<Aluno> listaAlunos = new ArrayList<>();
-    List<Professor> listaProfessores = new ArrayList<>();
-    List<Curso> listaCursos = new ArrayList<>();
-    List<Matricula> listaMatriculas = new ArrayList<>();
+    private List<Aluno> listaAlunos = new ArrayList<>();
+    private List<Professor> listaProfessores = new ArrayList<>();
+    private List<Curso> listaCursos = new ArrayList<>();
+    private List<Matricula> listaMatriculas = new ArrayList<>();
 
     public void registrarCurso(String nome,
                                Integer codigoCurso,
