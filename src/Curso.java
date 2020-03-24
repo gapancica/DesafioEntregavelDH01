@@ -62,7 +62,8 @@ public class Curso {
     public void excluirUmAluno(Aluno umAluno) {
         if (this.alunosMatriculados.equals(umAluno)) {
             this.alunosMatriculados.remove(umAluno);
-            this.quantMaxAlunos+=1;
+            System.out.println("O aluno "+umAluno+" foi removido.\n");
+
         }
     }
 
